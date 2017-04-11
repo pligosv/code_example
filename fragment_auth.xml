@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                tools:background="@drawable/auth_background">
+
+    <Button
+        android:id="@+id/btn_authorization_sigin"
+        style="@style/AuthorizationButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/authorization_button_signin_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/authorization_button_signin_margin_bottom"
+        android:layout_marginEnd="@dimen/authorization_button_signin_horizontal_margin"
+        android:layout_marginStart="@dimen/authorization_button_signin_horizontal_margin"
+        android:enabled="false"
+        android:text="@string/authorization_button_signin"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@id/btn_authorization_sigin"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_auth"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/authorization_logo_margin_top"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_logo_main_rus"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/authorization_ll_news_margin_top"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/AuthorizationNewsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/authorization_news_margin_end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/authorization_news"/>
+
+            <TextView
+                style="@style/AuthorizationNewsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@string/authorization_vacancy"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/authorization_life_margin_top"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_life_logo_auth"/>
+
+        <TextView
+            android:id="@+id/tv_authorization_hint"
+            style="@style/AuthorizationHintMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/authorization_hint_enter_margin_bottom"
+            android:layout_marginTop="@dimen/authorization_hint_enter_margin_bottom"
+            android:gravity="center"
+            android:padding="@dimen/authorization_hint_enter_padding"
+            android:text="@string/authorization_hint"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/authorization_enter_number_margin_end"
+            android:layout_marginStart="@dimen/authorization_enter_number_margin_start"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/AuthorizationUnderHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/authorization_enter_number_underhint_margin_start"
+                android:text="@string/authorization_hint_login"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_authorization_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/et_authorization_email"
+                    style="@style/AuthorizationEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="@string/authorization_hint_login"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/authorization_enter_number_edittext_padding_bottom"
+                    android:theme="@style/WhiteViews"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
